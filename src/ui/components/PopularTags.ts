@@ -10,7 +10,7 @@ export class PopularTags {
   }
 
   async clickTag(tagName: string) {
-    await this.tags.locator(`text=${tagName}`).click();
+    await this.tags.filter({ hasText: tagName }).click();
   }
 
   async getTagsList(): Promise<string[]> {
